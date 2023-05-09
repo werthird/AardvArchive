@@ -1,6 +1,9 @@
+// LOGIN FETCH
+
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
+  // Collect values from the login form
   const firstName = document.querySelector('#first-name-signup').value.trim();
   const lastName = document.querySelector('#last-name-signup').value.trim();
   const username = document.querySelector('#username-signup').value.trim();
@@ -8,6 +11,7 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
 
   if (username && email && password) {
+    // Send a POST request to the API endpoint
     const response = await fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify({ firstName, lastName, username, email, password }),
@@ -15,15 +19,19 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
       alert(response.statusText);
     }
+    // if username or password is not entered, send alert
   } else {
     alert('Please provide a username, email, and password.');
   }
 };
 
+
+// Event listener
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
