@@ -1,0 +1,22 @@
+[
+  {
+    "comment": "Nice HTML",
+    "user_id": "1",
+    "snippet_id": "1"
+  },
+  {
+    "comment": "Nice HTML",
+    "user_id": "2",
+    "snippet_id": "2"
+  },
+  {
+    "comment": "Nice CSS",
+    "user_id": "3",
+    "snippet_id": "3"
+  },
+  {
+    "comment": "Nice JavaScript",
+    "user_id": "4",
+    "snippet_id": "4"
+  }
+]

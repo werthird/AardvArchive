@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Image",
+    "code": "<img src='' alt=''>",
+    "user_id": "1",
+    "category_id": "1"
+  },
+  {
+    "title": "Link",
+    "code": "<a href='http://'></a>",
+    "user_id": "2",
+    "category_id": "1"
+  },
+  {
+    "title": "Media Query",
+    "code": "@media only screen and (min-width: 1080px) { }",
+    "user_id": "3",
+    "category_id": "2"
+  },
+  {
+    "title": "Query Selector",
+    "code": "document.querySelector('');",
+    "user_id": "4",
+    "category_id": "3"
+  }
+]
