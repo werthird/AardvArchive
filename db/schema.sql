@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS aardvark_db;
-CREATE DATABASE aardvark_db;
+DROP DATABASE IF EXISTS aardvarchive_db;
+CREATE DATABASE aardvarchive_db;

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AardvArchive</title>
+  <title>AardvArchive!</title>
 </head>
 
 <body>
@@ -14,10 +14,15 @@
         <a href="/">AardvArchive</a>
       </h1>
       <nav>
+        <a href="/views/homepage.handlebars">Home</a>
+
+        <!-- ADD SEARCH FUNCTION -->
+
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">Profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/views/profile.handlebars">Profile</a> |
+        <a href="/views/homepage.handlebars">Logout</button>
+        <a href ="/views/postdelete.handlebars">Post</a>
         {{else}}
         <a href="/login">Login</a>
         {{/if}}
