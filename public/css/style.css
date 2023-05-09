@@ -1,0 +1,35 @@
+ .mainHeader {
+    border: 5px solid black;
+    text-align: center;
+}
+
+.sideNav {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid black;
+    min-width: 10%;
+}
+
+.sideNav a {
+    display: block;
+    padding: 10px;
+}
+
+.mainSection {
+    border: 5px solid black;
+    text-align: center;
+    display: flex;
+    min-height: 80vh;
+}
+
+.homepageDiv {
+    display: flex;
+}
+
+.userBanner {
+    border: 5px solid black;
+    width: 500px;
+    margin: 20px;
+    flex-grow: 1;
+}
