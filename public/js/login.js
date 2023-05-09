@@ -19,6 +19,8 @@ const loginFormHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
+  } else {
+    alert('Please provide a username and password.');
   }
 };
 
