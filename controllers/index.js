@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+const frontendRoutes = require("./frontendRoutes");
+router.use("/",frontendRoutes)
+
 const userRoutes = require("./api/userRoutes.js");
 router.use("/api/users",userRoutes)
 
