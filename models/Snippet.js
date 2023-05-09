@@ -34,20 +34,6 @@ Snippet.init(
         key: 'id',
       }
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isEmail: true,
-      },
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        max: 20,
-      },
-    },
   },
   {
     sequelize,
