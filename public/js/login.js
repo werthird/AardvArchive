@@ -1,3 +1,5 @@
+// LOGIN FETCH
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -19,13 +21,14 @@ const loginFormHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
+  // if username or password is not entered, send alert
   } else {
     alert('Please provide a username and password.');
   }
 };
 
 
-
+// Event listener
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
