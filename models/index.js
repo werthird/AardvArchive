@@ -34,4 +34,8 @@ Comment.belongsTo(Snippet, {
   foreignKey: 'snippet_id',
 });
 
+Category.hasMany(Snippet, {
+  foreignKey: 'category_id',
+});
+
 module.exports = { User, Snippet, Category, Comment };
