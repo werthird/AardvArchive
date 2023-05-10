@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 router.get("/logout",(req,res)=>{
     req.session.destroy();
     res.redirect('/');
-})
+});
 
 //Route to get a specific user and their associated snippets and comments from the database by their ID.
 router.get("/:id", (req, res) => {

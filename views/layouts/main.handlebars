@@ -21,10 +21,10 @@
         <!-- ADD SEARCH FUNCTION -->
         
         <!-- Conditionally render login or logout links -->
-        {{#if req.session.user}}
-          <a href="/profile">Profile</a> |
-          <a href="/logout">Logout</button>
-          <a href ="/postdelete">Post</a>
+        {{#if logged_in}}
+          <a href="/profile">Profile</a>
+          <a href="/api/users/logout" id="#logout">Logout</button>
+          <a href ="/postdelete">New Snippet</a>
         {{else}}
           <a href="/login">Login</a>
         {{/if}}
@@ -38,7 +38,7 @@
   </div>
 
   <!-- Render script for logged in users only -->
-  {{#if req.session.user}}
+  {{#if logged_in}}
     <script src="/js/logout.js"></script>
   {{/if}}
 </body>
