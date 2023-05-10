@@ -19,9 +19,15 @@ router.get("/", (req, res) => {
   });
 
 // Route to log out the current user by destroying their session and redirecting them to the home page.
-router.get("/logout",(req,res)=>{
-    req.session.destroy();
+router.get("/logout", async (req, res) => {
+  try {
+    await req.session.destroy();
     res.redirect('/');
+  } catch (error) {
+    // Handle any errors that occur during session destruction
+    console.error("Error occurred during logout:", error);
+    res.status(500).send("An error occurred during logout.");
+  }
 });
 
 //Route to get a specific user and their associated snippets and comments from the database by their ID.
