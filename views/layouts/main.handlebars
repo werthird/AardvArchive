@@ -16,17 +16,17 @@
     </header>
     <main class="mainSection">
             <nav class="sideNav">
-        <a href="/views/homepage">Home</a>
+        <a href="/">Home</a>
 
         <!-- ADD SEARCH FUNCTION -->
         
         <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/views/profile">Profile</a> |
-        <a href="/views/homepage">Logout</button>
-        <a href ="/views/postdelete">Post</a>
+        {{#if req.session.user}}
+          <a href="/profile">Profile</a> |
+          <a href="/logout">Logout</button>
+          <a href ="/postdelete">Post</a>
         {{else}}
-        <a href="/login">Login</a>
+          <a href="/login">Login</a>
         {{/if}}
       </nav>
       <!-- Render the sub layout -->
@@ -38,8 +38,8 @@
   </div>
 
   <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  {{#if req.session.user}}
+    <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 

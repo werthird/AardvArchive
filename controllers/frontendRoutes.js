@@ -22,26 +22,12 @@ router.get("/signup", (req,res) =>{
 
 //==========================================================================
 // PROFILE PAGE
-router.get('/profile', async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ 
-        model: Snippet,
-        model: Comment,
-      }],
-    });
-    const user = userData.get({ plain: true });
-    const code = user.snippet;
-    res.render('profile', {
-      user,
-      code,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+router.get('/profile', (req, res) => {
+  if (req.session.user) {
+    res.render('profile');
+  } else {
+    alert('not logged in');
+  };
 });
 
 
