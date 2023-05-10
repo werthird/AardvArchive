@@ -59,13 +59,42 @@
 .post {
     border: 5px solid blue;
     display: flex;
-    /* justify-content: space-evenly;
-    align-items: center; */
     width: 30%;
     height: 800px;
     margin: 10px;
 }
 
 .loginDiv {
-    
+    display: block;
+    border: 5px solid blue;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5% 25% 5% 25%;
+}
+
+.loginForms {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.loginForm {
+    display: block;
+    margin: 5px;
+}
+
+.signupDiv {
+    display: block;
+    border: 5px solid blue;
+    flex-wrap: wrap;
+}
+
+.signupForms {
+    display: flex;
+    flex-direction: column;
+}
+
+.signupForm {
+    display: block;
+    margin: 5px;
 }
