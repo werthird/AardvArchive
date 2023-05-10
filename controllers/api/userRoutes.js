@@ -1,13 +1,13 @@
 //Import necessary modules and models.
 const express = require("express");
 const router = express.Router();
-const {User, Snippet, Comment, Category} = require("../../models/");
+const {User, Snippet, Comment} = require("../../models/");
 const bcrypt  = require("bcrypt");
 
 //Route to get all users and their associated snippets, comments, and categories from the database.
 router.get("/", (req, res) => {
     User.findAll({
-      include:[Snippet, Comment, Category]
+      include:[Snippet, Comment, ]
     })
       .then(dbUsers => {
         res.json(dbUsers);
@@ -26,7 +26,7 @@ router.get("/logout",(req,res)=>{
 
 //Route to get a specific user and their associated snippets and comments from the database by their ID.
 router.get("/:id", (req, res) => {
-    User.findByPk(req.params.id,{include:[Snippet, Comment, Category]})
+    User.findByPk(req.params.id,{include:[Snippet, Comment, ]})
       .then(dbUser => {
         res.json(dbUser);
       })
