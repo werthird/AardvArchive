@@ -1,7 +1,7 @@
 // Import necessary packages and models
 const express = require("express");
 const router = express.Router();
-const {User, Snippet, Comment, Category} = require("../../models");
+const {User, Snippet, Comment} = require("../../models");
 const withAuth = require('../../utils/auth.js')
 
 // Retrieve all comments and associated users and snippets
