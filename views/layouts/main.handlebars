@@ -16,15 +16,15 @@
     </header>
     <main class="mainSection">
             <nav class="sideNav">
-        <a href="/views/homepage.handlebars">Home</a>
+        <a href="/views/homepage">Home</a>
 
         <!-- ADD SEARCH FUNCTION -->
         
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/views/profile.handlebars">Profile</a> |
-        <a href="/views/homepage.handlebars">Logout</button>
-        <a href ="/views/postdelete.handlebars">Post</a>
+        <a href="/views/profile">Profile</a> |
+        <a href="/views/homepage">Logout</button>
+        <a href ="/views/postdelete">Post</a>
         {{else}}
         <a href="/login">Login</a>
         {{/if}}
