@@ -98,3 +98,25 @@
     display: block;
     margin: 5px;
 }
+
+.profileDiv {
+    display: block;
+    border: 5px solid black;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5% 25% 5% 25%;
+}
+
+.profilePosts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.profilePost {
+    border: 5px solid blue;
+    display: flex;
+    width: 30%;
+    height: 800px;
+    margin: 10px;
+}
