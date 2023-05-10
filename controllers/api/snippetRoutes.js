@@ -39,7 +39,8 @@ router.post("/", (req, res) => {
     Snippet.create({
       title:req.body.title,
       content:req.body.content,
-      userId:req.session.user.id
+      category_id: req.body.category,
+      user_id:req.session.user.id
     })
     // date is "createdAt"
       .then(newSnippet => {
