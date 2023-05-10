@@ -13,4 +13,7 @@ router.use("/api/snippets",snippetRoutes)
 const commentRoutes = require("./api/commentRoutes.js")
 router.use("/api/comments", commentRoutes)
 
+const categoryRoutes = require("./api/categoryRoutes")
+router.use("/api/categorys", categoryRoutes)
+
 module.exports = router;
