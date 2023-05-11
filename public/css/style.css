@@ -103,7 +103,7 @@
     border: 5px solid black;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
 }
 
 .profilePosts {

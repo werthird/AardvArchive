@@ -6,46 +6,56 @@
 // =======================================================================
 // CREATE NEW SNIPPET
 
-const newSnippetHandler = async (event) => {
-  event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  const newPostButton = document.querySelector('#new-post-button');
+  const createNewSection = document.querySelector('#createNew');
+  const newSnippetForm = createNewSection.querySelector('.new-snippet-form');
 
-  // Collect values from the create new snippet form
-  const title = document.querySelector('#snippet-title').value.trim();
-  const code = document.querySelector('#snippet-content').value.trim();
-  //const category = document.querySelector('#snippet-category').value.trim();
+  const showForm = (event) => {
+    event.preventDefault();
+    newPostButton.style.display = 'none';
+    createNewSection.style.display = 'block';
+  };
 
-  if (title && code) {
-    // Send a POST request to the API endpoint
-    const response = await fetch(`/api/snippets`, {
-      method: 'POST',
-      body: JSON.stringify({ title, code }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  const newSnippetHandler = async (event) => {
+    event.preventDefault();
 
-    if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+    // Collect values from the create new snippet form
+    const title = document.querySelector('#snippet-title').value.trim();
+    const code = document.querySelector('#snippet-content').value.trim();
+
+    if (title && code) {
+      // Send a POST request to the API endpoint
+      const response = await fetch(`/api/snippets`, {
+        method: 'POST',
+        body: JSON.stringify({ title, code }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        // If successful, redirect the browser to the profile page
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to create snippet.');
+      }
     } else {
-      alert('Failed to create snippet.');
+      alert('Please provide a title and some content.');
     }
-  // if no title or content, send alert
-  } else {
-    alert('Please provide a title and some content.');
-  }
-};
+  };
 
-document
-  .querySelector('.new-snippet-form')
-  .addEventListener('submit', newSnippetHandler);
+  newPostButton.addEventListener('click', showForm);
+  newSnippetForm.addEventListener('submit', newSnippetHandler);
+});
+
 
 
 
 // ==================================================================================
 // UPDATE SNIPPET
 
-const updateSnippetHandler = async (event) => {
+async function updateSnippetHandler(event) {
   event.preventDefault();
 
   // Collect values from page
@@ -73,11 +83,11 @@ const updateSnippetHandler = async (event) => {
     } else {
       alert('Failed to update snippet');
     }
-  // if no title or content, send alert
+    // if no title or content, send alert
   } else {
     alert('Please provide a title and some content.');
   }
-};
+}
 
 document
   .querySelector('.update-snippet-button')
