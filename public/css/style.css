@@ -5,11 +5,23 @@
 }
 
 .mainHeader {
-    border: 5px solid black;
     text-align: center;
     padding: 30px;
     font-family: 'Lilita One', cursive;
     font-size: 75px;
+    background-color: rgb(244, 160, 49);
+    border-bottom: 5px solid darkolivegreen;
+}
+
+.mainHeader a {
+    text-decoration: none;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: bolder;
+    color: lightskyblue;
+    background-color: rgb(113, 74, 23);
+    border: 5px solid darkolivegreen;;
+    border-radius: 25px;
 }
 
 .sideNav {
@@ -26,7 +38,6 @@
 }
 
 .mainSection {
-    border: 5px solid black;
     text-align: center;
     display: flex;
     min-height: 80vh;
@@ -53,10 +64,13 @@
 }
 
 .userBanner {
-    border: 5px solid rgb(114, 107, 107);
-    width: 80%;
+    /* border: 5px solid rgb(114, 107, 107); */
+    width: 95%;
     margin: 20px;
     text-align: center;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: darkolivegreen;
 }
 
 .post {
@@ -105,10 +119,12 @@
 
 .profileDiv {
     display: block;
-    border: 5px solid black;
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
+    background-image: url("../images/savannah1.jpg");
+    background-size: cover;
+
 }
 
 .profilePosts {
@@ -118,14 +134,54 @@
 }
 
 .profilePost {
-    border: 5px solid;
-    border-image: linear-gradient(to right, #333333, #87CEEB, #FFD700, #FF1493) 1;
-    border-image-slice: 1;
+    border: 5px solid rgb(132, 139, 0);
+    border-radius: 25px;
+    /* border-image: linear-gradient(to right, #333333, #87CEEB, #FFD700, #FF1493) 1;
+    border-image-slice: 1; */
     display: flex;
     flex-direction: column;
     width: 30%;
     height: 200px;
     margin: 10px;
+    background-color: rgb(244, 160, 49);
+}
+
+.profilePost a {
+    text-decoration: none;
+}
+
+.postTitle {
+    background-color: rgb(113, 74, 23);
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: bolder;
+    color: lightskyblue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.newPostbtn {
+    background-color: rgb(244, 160, 49);
+    border: 2px solid rgb(132, 139, 0);
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: bolder;
+    color: rgb(113, 74, 23);
+}
+
+#createNew {
+    background-color: rgb(244, 160, 49);
+    border: 2px solid rgb(132, 139, 0);
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: bolder;
+    color: darkolivegreen; 
 }
 
 
