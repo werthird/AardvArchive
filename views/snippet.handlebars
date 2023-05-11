@@ -6,10 +6,16 @@
     </h2>
     <p>Created by {{user.username}} on {{format_date createdAt}}</p>
   </div>
-  <div>
-    <pre class="code-snippet">{{restoreContent code}}</pre>
+  <div class="code-editor">
+    <pre class="code-snippet" id="editor">{{restoreContent code}}</pre>
   </div>
 </div>
+
+
+
+
+
+
 
 
 {{!-- DISPLAY COMMENTS --}}
