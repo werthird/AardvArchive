@@ -1,5 +1,5 @@
 // LOGIN FETCH
-
+document.addEventListener('DOMContentLoaded', () => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -33,5 +33,6 @@ const signupFormHandler = async (event) => {
 
 // Event listener
 document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  .querySelector('.signupForms')
+  .addEventListener('submit', signupFormHandler)
+});
