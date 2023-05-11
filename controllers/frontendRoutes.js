@@ -52,8 +52,30 @@ router.get("/profile",(req,res)=>{
       hbsData.logged_in = req.session.user?true:false
       // Render the user dashboard and pass in the user data and whether the user is logged in
       res.render("profile", hbsData);
-  })
-})
+  });
+});
+
+//==========================================================================
+// EDIT POST PAGE
+router.get('/profile/update/:id', async (req, res) => {
+  try {
+    // Grab post based on id
+    const postData = await Snippet.findByPk(req.params.id, {
+      include: [ User, Comment ],
+    });
+
+    // Serialize data
+    const post = postData.get({ plain: true });
+
+    // Render post view
+    res.render('postdelete', {
+      post,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 module.exports = router;
