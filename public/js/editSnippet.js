@@ -1,10 +1,42 @@
-// REQUIREMENTS
-//const { convertContent } = require('../../utils/convert.js')
+// =======================================================================
+// CONVERT TEXT FUNCTION
+
+function convertContent(str) {
+  const convertSpaces = str.replace(/[ \t]/g, '§');
+  const convertLinesBreaks = convertSpaces.replace(/\n/g, '€');
+  return convertLinesBreaks;
+};
 
 
 
 // =======================================================================
 // CREATE NEW SNIPPET
+
+
+const newSnippetHandler = async (event) => {
+  event.preventDefault();
+
+  // Collect values from the create new snippet form
+  const title = document.querySelector('#snippet-title').value.trim();
+  const rawCode = document.querySelector('#snippet-content').value.trim();
+  //const category = document.querySelector('#snippet-category').value.trim();
+
+  if (title && rawCode) {
+
+    const code = convertContent(rawCode);
+
+    // Send a POST request to the API endpoint
+    const response = await fetch(`/api/snippets`, {
+      method: 'POST',
+      body: JSON.stringify({ title, code }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/profile');
 
 document.addEventListener('DOMContentLoaded', () => {
   const newPostButton = document.querySelector('#new-post-button');
@@ -40,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         alert('Failed to create snippet.');
       }
+
     } else {
       alert('Please provide a title and some content.');
     }
