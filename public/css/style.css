@@ -21,7 +21,8 @@
     color: lightskyblue;
     background-color: rgb(113, 74, 23);
     border: 5px solid darkolivegreen;;
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .sideNav {
@@ -75,16 +76,20 @@
 }
 
 .post {
-    border: 5px solid rgb(132, 139, 0);
+    border: 5px solid darkolivegreen;
     border-radius: 25px;
-    /* border-image: linear-gradient(to right, #333333, #87CEEB, #FFD700, #FF1493) 1;
-    border-image-slice: 1; */
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: 200px;
+    height: 300px;
     margin: 10px;
     background-color: rgb(244, 160, 49);
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+
+.post a {
+    text-decoration: none;
 }
 
 .loginDiv {
@@ -185,7 +190,9 @@
 .newPostbtn,
 .loginbtn,
 .signupbtn,
-.submitbtn {
+.submitbtn,
+.update-snippet-button,
+.delete-snippet-button {
     background-color: rgb(113, 74, 23);
     border: 2px solid darkolivegreen;
     width: 100px;
@@ -212,7 +219,7 @@
 
 .new-snippet-form {
     margin: 5% 25% 5% 25%;
-    background-color: rgb(244, 160, 49);;
+    background-color: rgb(244, 160, 49);
     color: darkolivegreen;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
@@ -255,4 +262,41 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+}
+.snippetAll {
+    display: flex;
+    justify-content: space-around;
+}
+
+.snippetDiv {
+    border: 5px solid darkolivegreen;
+    border-radius: 25px;
+    background-color: rgb(244, 160, 49);
+    margin: 5% 0 0 5%;
+    font-family: 'Instrument Serif', serif;
+}
+
+.snippetDiv h2 {
+    background-color: rgb(113, 74, 23);
+    color: lightskyblue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-style: italic;
+}
+
+.btnDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.commentDiv {
+    border: 5px solid black;
+    margin: 30px;
+    align-self: flex-end;
+}
+
+.addCommentDiv {
+    border: 5px solid black;
 }
