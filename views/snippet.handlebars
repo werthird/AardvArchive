@@ -1,5 +1,6 @@
+<div class snippetAll>
 {{!-- DISPLAY POST --}}
-<div>
+<div class="snippetDiv">
   <div>
     <h2>
       {{title}}
@@ -9,13 +10,13 @@
   <div class="code-editor">
     <pre class="code-snippet editor">{{restoreContent code}}</pre>
   </div>
-</div>
+
 
 
 
 {{!-- EDIT POST IF BELONGS TO USER --}}
 {{#if is_own_post}}
-  <div>
+  <div class="btnDiv">
     <div>
       <button class="update-snippet-button" type="submit" data-snippet-id="{{id}}">Update</button>
     </div>
@@ -24,6 +25,7 @@
       <button class="delete-snippet-button" type="submit" data-snippet-id="{{id}}">Delete</button>
     </div>
   </div>
+</div>
 {{/if}}
 
 
@@ -31,7 +33,7 @@
 
 
 {{!-- DISPLAY COMMENTS --}}
-<div>
+<div class="commentDiv">
   <h2>Comments:</h2>
   {{#each comments as |comment|}}
     <div>
@@ -45,7 +47,7 @@
 
 {{!-- ADD COMMENT --}}
 {{#if logged_in}}
-  <div>
+  <div class="addCommentDiv">
     <h3>Add a comment:</h3>
 
     <form class="new-comment-form">
@@ -66,5 +68,5 @@
     <a href="/signup">Signup</a>
   </div>
 {{/if}}
-
+</div>
 
