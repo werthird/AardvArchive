@@ -36,7 +36,7 @@ router.post("/", (req, res) => {
     Comment.create({
       comment:req.body.comment,
       user_id:req.session.user.id,
-      snippet_id:req.body.snippet_id
+      snippet_id:req.body.snippetId
     })
     .then(newComment => {
       res.json(newComment);

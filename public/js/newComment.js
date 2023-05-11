@@ -1,5 +1,11 @@
-// REQUIREMENTS
-const { convertContent } = require('../utils/convert.js')
+// =======================================================================
+// CONVERT TEXT FUNCTION
+
+function convertContent(str) {
+  const convertSpaces = str.replace(/[ \t]/g, '§');
+  const convertLinesBreaks = convertSpaces.replace(/\n/g, '€');
+  return convertLinesBreaks;
+};
 
 
 
@@ -10,13 +16,17 @@ const newCommentHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from page
-  const comment = document.querySelector('#comment').value.trim();
+  const rawComment = document.querySelector('#comment-content').value.trim();
+  const snippetId = document.querySelector('#snippet-id').value;
 
-  if (comment) {
+  if (rawComment) {
+
+    const comment = convertContent(rawComment);
+
     // Send a POST request to the API endpoint
     const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({ comment }),
+      body: JSON.stringify({ comment, snippetId }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -24,7 +34,7 @@ const newCommentHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      document.location.replace(`/api/snippets/${snippetId}`);
     } else {
       alert('Failed to create comment');
     }
