@@ -133,7 +133,7 @@ body {
    background: linear-gradient(to bottom, #aaa1a1, #87CEEB);
 }
 
-.profilePost pre {
+.code-snippet {
     text-align: left;
 }
 

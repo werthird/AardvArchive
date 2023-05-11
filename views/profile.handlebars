@@ -17,7 +17,7 @@
         <card class="profilePost">
             <a href="/api/snippets/{{snippet.id}}"><h2 class="postTitle">{{snippet.title}}</h2></a>
             <p class="postAuthor">- Created on {{format_date snippet.createdAt}}</p>
-            <pre>{{restoreContent snippet.code}}</pre>
+            <pre class="code-snippet">{{restoreContent snippet.code}}</pre>
         </card>
         {{/each}}
     </section>
