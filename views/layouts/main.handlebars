@@ -22,7 +22,7 @@
         
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile"><canvas id="canvas2" width="100" height="100"></canvas></a> |
+        <a href="/profile"><canvas id="canvas2" width="100" height="100"></canvas></a>
         <a href="/api/users/logout" id="#logout"><canvas id="canvas3" width="100" height="100"></canvas></button>
         <a href ="/postdelete"><canvas id="canvas4" width="100" height="100"></canvas></a>
         {{else}}
@@ -55,6 +55,10 @@
         let editor = ace.edit(editorElements[i]);
         editor.setTheme("ace/theme/dracula");
         editor.session.setMode("ace/mode/javascript");
+        editor.session.setTabSize(4);
+        editor.session.setUseWrapMode(true);
+        editor.setHighlightActiveLine(true);
+        editor.setReadOnly(true);
     }
 </script>
 </html>
