@@ -7,9 +7,7 @@
     <p>Created by {{user.username}} on {{format_date createdAt}}</p>
   </div>
   <div>
-    <p>
-      {{code}}
-    </p>
+    <pre class="code-snippet">{{restoreContent code}}</pre>
   </div>
 </div>
 
@@ -19,7 +17,7 @@
   <h2>Comments:</h2>
   {{#each comments as |comment|}}
     <div>
-      <p>{{{restoreContent comment.comment}}}</p>
+      <pre class="code-snippet">{{{restoreContent comment.comment}}}</pre>
       <p>-- {{format_date comment.createdAt}}</p>
     </div>
   {{/each}}
