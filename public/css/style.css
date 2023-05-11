@@ -111,12 +111,20 @@
     color: lightskyblue;
     background-color:  rgb(113, 74, 23);;
     margin-bottom: 5px;
+    text-decoration: underline;
 }
 
 .loginForm {
     display: block;
     margin: 5px;
     
+}
+
+.form-input {
+    border-radius: 5px;
+    border-color: darkolivegreen;
+    width: 300px;
+    height: 30px;
 }
 
 .signupDiv {
@@ -175,16 +183,19 @@
     border-top-right-radius: 20px;
 }
 
-.newPostbtn {
-    background-color: rgb(244, 160, 49);
-    border: 2px solid rgb(132, 139, 0);
+.newPostbtn,
+.loginbtn,
+.signupbtn {
+    background-color: rgb(113, 74, 23);
+    border: 2px solid darkolivegreen;
     width: 100px;
     height: 50px;
     border-radius: 5px;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
     font-weight: bolder;
-    color: rgb(113, 74, 23);
+    color: lightskyblue;
+    font-size: large;
 }
 
 #createNew {
