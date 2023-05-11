@@ -19,10 +19,16 @@ router.get("/", (req, res) => {
   });
 
 // Route to log out the current user by destroying their session and redirecting them to the home page.
-router.get("/logout",(req,res)=>{
-    req.session.destroy();
+router.get("/logout", async (req, res) => {
+  try {
+    await req.session.destroy();
     res.redirect('/');
-})
+  } catch (error) {
+    // Handle any errors that occur during session destruction
+    console.error("Error occurred during logout:", error);
+    res.status(500).send("An error occurred during logout.");
+  }
+});
 
 //Route to get a specific user and their associated snippets and comments from the database by their ID.
 router.get("/:id", (req, res) => {
@@ -60,7 +66,7 @@ router.post("/login", (req, res) => {
       where:{
       username:req.body.username
     }
-}).then(foundUser=>{
+  }).then(foundUser=>{
       // if username is not found, send message
       if(!foundUser){
         return res.status(400).json({msg:"wrong login credentials"})
@@ -69,10 +75,11 @@ router.post("/login", (req, res) => {
       if(bcrypt.compareSync(req.body.password,foundUser.password)){
         // if pw matches, create session for user 
         req.session.user = {
-          id:foundUser.id,
-          username:foundUser.username
+          id: foundUser.id,
+          username: foundUser.username
         }
-        return res.json(foundUser)
+
+        return res.json(foundUser);
         // redirect page
       } else {
         return res.status(400).json({msg:"wrong login credentials"})

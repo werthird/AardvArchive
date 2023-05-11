@@ -18,9 +18,14 @@ router.get("/", (req, res) => {
 
   // Get one snippet with associated user, comment, and category
 router.get("/:id", (req, res) => {
-    Snippet.findByPk(req.params.id,{include:[User, Comment]})
-      .then(dbSnippet => {
-        res.json(dbSnippet);
+    Snippet.findByPk(req.params.id,
+        {include:[User, Comment]
+      }).then(snippetData => {
+        const dbSnippet = snippetData.get({plain:true});
+        console.log(`${dbSnippet.code}`);
+        dbSnippet.logged_in = req.session.user?true:false
+        
+        res.render('snippet', dbSnippet);
       })
       .catch(err => {
         console.log(err);

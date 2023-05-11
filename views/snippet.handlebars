@@ -1,0 +1,54 @@
+{{!-- DISPLAY POST --}}
+<div>
+  <div>
+    <h2>
+      {{title}}
+    </h2>
+    <p>Created by {{user.username}} on {{format_date createdAt}}</p>
+  </div>
+  <div>
+    <p>
+      {{code}}
+    </p>
+  </div>
+</div>
+
+
+{{!-- DISPLAY COMMENTS --}}
+<div>
+  <h2>Comments:</h2>
+  {{#each comments as |comment|}}
+    <div>
+      <p>{{{restoreContent comment.comment}}}</p>
+      <p>-- {{format_date comment.createdAt}}</p>
+    </div>
+  {{/each}}
+</div>
+
+
+
+{{!-- ADD COMMENT --}}
+{{#if logged_in}}
+  <div>
+    <h3>Add a comment:</h3>
+
+    <form class="new-comment-form">
+      <div>
+        <label for="comment-content">Comment</label>
+        <textarea id="comment-content" name="comment-content"></textarea>
+      </div>
+      <input type="hidden" id="snippet-id" value="{{id}}">
+      <div>
+        <button type="submit">Create</button>
+      </div>
+    </form>
+  </div>
+{{else}}
+  <div>
+    <p>Login in to add your own comments.</p>
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+  </div>
+{{/if}}
+
+<script src="/js/newComment.js"></script>

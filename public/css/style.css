@@ -58,7 +58,6 @@
 
 .post {
     border: 5px solid blue;
-    display: flex;
     width: 30%;
     height: 800px;
     margin: 10px;
@@ -104,7 +103,7 @@
     border: 5px solid black;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 5% 25% 5% 25%;
+    width: 100%;
 }
 
 .profilePosts {
@@ -116,7 +115,11 @@
 .profilePost {
     border: 5px solid blue;
     display: flex;
-    width: 30%;
+    flex-direction: column;
     height: 800px;
     margin: 10px;
+}
+
+.profilePost pre {
+    text-align: left;
 }

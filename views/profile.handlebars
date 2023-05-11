@@ -1,62 +1,46 @@
 <div class="profileDiv">
-<div class="userBanner">
-    <h2>User Created Posts</h2>
-    <h1>Here is the dashboard page</h1>
-    <h2>Welcome, {{user.first_name}} {{user.last_name}}!</h2>
-    <h3>Your Posts:</h3>
-</div>
+    <div class="userBanner">
+        <h2>User Created Posts</h2>
+        <h1>Here is the dashboard page</h1>
+        <h2>Welcome,
+            {{#if first_name}}
+                {{first_name}}
+            {{else}}
+                {{username}}!
+            {{/if}}
+        </h2>
+        <h3>Your Posts:</h3>
+    </div>
 
-<section class="profilePosts">
-
-    <card class="profilePost">
-        <div class="profpostTitle">
-
-        </div>
-        <div class="profpostAuthor">
-
-        </div>
-        <div class="profpostCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="profpostDate">
-
-        </div>
-    </card>
+    <section class="profilePosts">
+        {{#each snippets as |snippet|}}
         <card class="profilePost">
-        <div class="profpostTitle">
-
-        </div>
-        <div class="profpostAuthor">
-
-        </div>
-        <div class="profpostCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="profpostDate">
-
-        </div>
-    </card>
-        <card class="profilePost">
-        <div class="profpostTitle">
-
-        </div>
-        <div class="profpostAuthor">
-
-        </div>
-        <div class="profpostCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="profpostDate">
-
-        </div>
-    </card>
+            <a href="/api/snippets/{{snippet.id}}"><h2 class="postTitle">{{snippet.title}}</h2></a>
+            <p class="postAuthor">- Created on {{format_date snippet.createdAt}}</p>
+            <pre>{{restoreContent snippet.code}}</pre>
+        </card>
+        {{/each}}
+    </section>
+    <section id="createNew" class="card text-center" style="display: none;">
+  <div class="card-body">
+    <h3 class="card-title">Create New Post</h3>
+    <form class="new-snippet-form">
+      <div class="card-text">
+        <label for="snippet-title">Title</label><br>
+        <input type="text" id="snippet-title" placeholder="Enter a Title">
+      </div>
+      <div class="card-text">
+        <label for="snippet-content">Content</label>
+        <textarea id="snippet-content" placeholder="Enter Content"></textarea>
+      </div>
+      <button type="submit">Create</button>
+    </form>
+  </div>
 </section>
+
+<form id="newpost">
+  <button id="new-post-button">+ New Post</button>
+</form>
+
+<script src="/js/editSnippet.js"></script>
+</div>

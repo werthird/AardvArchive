@@ -4,15 +4,32 @@ const {User, Snippet, Comment, Category} = require('../models');
 
 //Get route for homepage
 router.get('/', async (req, res) => {
-  res.render('homepage');
+  try {
+    const snippetData = await Snippet.findAll({
+      include: [{
+        model: User,
+        attributes: ['username']
+      }],
+    });
+
+    const snippets = snippetData.map((snippet) => snippet.get({ plain: true }));
+
+    res.render('homepage', {
+      snippets,
+      logged_in: req.session.user
+    });
+  } catch {
+    res.status(500).json(err);
+  };
 });
 
 //Get route for login page
 router.get("/login", (req,res) =>{
   if(req.session.user){
-    return res.redirect("/profile")
-  }
-  res.render("login")
+    return res.redirect("/profile");
+  } else {
+    res.render("login");
+  };
 });
 
 //Get route for signup page
@@ -20,29 +37,23 @@ router.get("/signup", (req,res) =>{
   res.render("signup")
 });
 
+
+
 //==========================================================================
 // PROFILE PAGE
-router.get('/profile', async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ 
-        model: Snippet,
-        model: Comment,
-      }],
-    });
-    const user = userData.get({ plain: true });
-    const code = user.snippet;
-    res.render('profile', {
-      user,
-      code,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
+router.get("/profile",(req,res)=>{
+  if(!req.session.user) {
+      return res.redirect('/login')
   }
-});
+  User.findByPk(req.session.user.id, {
+      include: [Snippet, Comment]
+  }).then(userData => {
+      const hbsData = userData.get({plain:true})
+      hbsData.logged_in = req.session.user?true:false
+      // Render the user dashboard and pass in the user data and whether the user is logged in
+      res.render("profile", hbsData);
+  })
+})
 
 
 module.exports = router;
