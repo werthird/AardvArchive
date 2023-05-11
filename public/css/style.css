@@ -157,16 +157,15 @@
 }
 
 .profilePost {
-    border: 5px solid rgb(132, 139, 0);
+    border: 5px solid darkolivegreen;
     border-radius: 25px;
-    /* border-image: linear-gradient(to right, #333333, #87CEEB, #FFD700, #FF1493) 1;
-    border-image-slice: 1; */
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: 200px;
+    height: 300px;
     margin: 10px;
     background-color: rgb(244, 160, 49);
+    padding-bottom: 20px;
 }
 
 .profilePost a {
@@ -185,7 +184,8 @@
 
 .newPostbtn,
 .loginbtn,
-.signupbtn {
+.signupbtn,
+.submitbtn {
     background-color: rgb(113, 74, 23);
     border: 2px solid darkolivegreen;
     width: 100px;
@@ -198,18 +198,41 @@
     font-size: large;
 }
 
-#createNew {
-    background-color: rgb(244, 160, 49);
-    border: 2px solid rgb(132, 139, 0);
-    width: 100px;
-    height: 50px;
-    border-radius: 5px;
+.card-body {
+    display: block;
+    border: 5px solid darkolivegreen;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5% 25% 5% 25%;
+    background-color: rgb(244, 160, 49);;
+    color: darkolivegreen;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
-    font-weight: bolder;
-    color: darkolivegreen; 
 }
 
+.new-snippet-form {
+    margin: 5% 25% 5% 25%;
+    background-color: rgb(244, 160, 49);;
+    color: darkolivegreen;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+}
+
+#createNew h3 {
+    background-color: rgb(113, 74, 23);
+    color: lightskyblue;
+}
+
+.card {
+    background-color: rgb(113, 74, 23);
+    width: 100%;
+    color: lightskyblue;
+}
+
+#snippet-content {
+    width: 300px;
+    height: 600px;
+}
 
 body {
    background: linear-gradient(to bottom, #aaa1a1, #87CEEB);
@@ -222,7 +245,7 @@ body {
 .code-editor {
     margin: 20px;
     width: 300px;
-    height: 300px
+    height: 300px;
 }
 
 .editor { 
