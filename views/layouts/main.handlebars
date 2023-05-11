@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AardvArchive!</title>
-  <link rel="stylesheet" href="/css/editor.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -49,8 +48,13 @@
 <!-- Code Editor Scripts -->
 <script src="/js/editor/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/dracula");
-    editor.session.setMode("ace/mode/javascript");
+     let editorElements = document.getElementsByClassName("editor");
+
+    // Iterate over the elements and initialize the Ace editor for each
+    for (let i = 0; i < editorElements.length; i++) {
+        let editor = ace.edit(editorElements[i]);
+        editor.setTheme("ace/theme/dracula");
+        editor.session.setMode("ace/mode/javascript");
+    }
 </script>
 </html>
