@@ -1,62 +1,24 @@
 <div class="profileDiv">
-<div class="userBanner">
-    <h2>User Created Posts</h2>
-    <h1>Here is the dashboard page</h1>
-    <h2>Welcome, {{user.first_name}} {{user.last_name}}!</h2>
-    <h3>Your Posts:</h3>
+    <div class="userBanner">
+        <h2>User Created Posts</h2>
+        <h1>Here is the dashboard page</h1>
+        <h2>Welcome,
+            {{#if first_name}}
+                {{first_name}}
+            {{else}}
+                {{username}}!
+            {{/if}}
+        </h2>
+        <h3>Your Posts:</h3>
+    </div>
+
+    <section class="profilePosts">
+        {{#each snippets as |snippet|}}
+        <card class="profilePost">
+            <h2 class="postTitle">{{snippet.title}}</h2>
+            <p class="postAuthor">- Created on {{format_date snippet.createdAt}}</p>
+            <p>{{snippet.code}}</p>
+        </card>
+        {{/each}}
+    </section>
 </div>
-
-<section class="profilePosts">
-
-    <card class="profilePost">
-        <div class="profpostTitle">
-
-        </div>
-        <div class="profpostAuthor">
-
-        </div>
-        <div class="profpostCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="profpostDate">
-
-        </div>
-    </card>
-        <card class="profilePost">
-        <div class="profpostTitle">
-
-        </div>
-        <div class="profpostAuthor">
-
-        </div>
-        <div class="profpostCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="profpostDate">
-
-        </div>
-    </card>
-        <card class="profilePost">
-        <div class="profpostTitle">
-
-        </div>
-        <div class="profpostAuthor">
-
-        </div>
-        <div class="profpostCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="profpostDate">
-
-        </div>
-    </card>
-</section>

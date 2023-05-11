@@ -4,56 +4,12 @@
 </div>
 
 <section class="userPosts">
-    <card class="post">
-        <div class="postTitle">
-
-        </div>
-        <div class="postAuthor">
-
-        </div>
-        <div class="postCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="postDate">
-
-        </div>
-    </card>
-    <card class="post">
-                <div class="postTitle">
-
-        </div>
-        <div class="postAuthor">
-
-        </div>
-        <div class="postCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="postDate">
-            
-        </div>
-    </card>
-    <card class="post">
-                <div class="postTitle">
-
-        </div>
-        <div class="postAuthor">
-
-        </div>
-        <div class="postCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="postDate">
-            
-        </div>
-    </card>
+    {{#each snippets as |snippet|}}
+        <card class="post">
+            <h2 class="postTitle">{{snippet.title}}</h2>
+            <p class="postAuthor">- Created by {{snippet.user.username}} {{format_date snippet.createdAt}}</p>
+            <p>{{snippet.code}}</p>
+        </card>
+    {{/each}}
 </section>
 </div>
