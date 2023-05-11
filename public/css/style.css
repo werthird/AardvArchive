@@ -7,6 +7,9 @@
 .mainHeader {
     border: 5px solid black;
     text-align: center;
+    padding: 30px;
+    font-family: 'Lilita One', cursive;
+    font-size: 75px;
 }
 
 .sideNav {
@@ -50,16 +53,18 @@
 }
 
 .userBanner {
-    border: 5px solid black;
+    border: 5px solid rgb(114, 107, 107);
     width: 80%;
     margin: 20px;
     text-align: center;
 }
 
 .post {
-    border: 5px solid blue;
+    border: 5px solid;
+    border-image: linear-gradient(to right, #333333, #87CEEB, #FFD700, #FF1493) 1;
+    border-image-slice: 1;
     width: 30%;
-    height: 800px;
+    height: 200px;
     margin: 10px;
 }
 
@@ -113,9 +118,17 @@
 }
 
 .profilePost {
-    border: 5px solid blue;
+    border: 5px solid;
+    border-image: linear-gradient(to right, #333333, #87CEEB, #FFD700, #FF1493) 1;
+    border-image-slice: 1;
     display: flex;
     flex-direction: column;
-    height: 800px;
+    width: 30%;
+    height: 200px;
     margin: 10px;
 }
+
+body {
+    background: linear-gradient(to bottom, #aaa1a1, #87CEEB);
+  }
+  
