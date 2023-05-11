@@ -1,5 +1,5 @@
 // REQUIREMENTS
-const { convertContent } = require('../../utils/convert.js')
+//const { convertContent } = require('../../utils/convert.js')
 
 
 
@@ -11,14 +11,14 @@ const newSnippetHandler = async (event) => {
 
   // Collect values from the create new snippet form
   const title = document.querySelector('#snippet-title').value.trim();
-  const content = document.querySelector('#snippet-content').value.trim();
-  const category = document.querySelector('#snippet-category').value.trim();
+  const code = document.querySelector('#snippet-content').value.trim();
+  //const category = document.querySelector('#snippet-category').value.trim();
 
-  if (title && content && category) {
+  if (title && code) {
     // Send a POST request to the API endpoint
     const response = await fetch(`/api/snippets`, {
       method: 'POST',
-      body: JSON.stringify({ title, content, category }),
+      body: JSON.stringify({ title, code }),
       headers: {
         'Content-Type': 'application/json',
       },
