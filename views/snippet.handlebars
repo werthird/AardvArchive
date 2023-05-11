@@ -13,6 +13,18 @@
 
 
 
+{{!-- EDIT POST IF BELONGS TO USER --}}
+{{#if is_own_post}}
+  <div>
+    <div>
+      <button class="update-snippet-button" type="submit" data-snippet-id="{{id}}">Update</button>
+    </div>
+
+    <div>
+      <button class="delete-snippet-button" type="submit" data-snippet-id="{{id}}">Delete</button>
+    </div>
+  </div>
+{{/if}}
 
 
 
@@ -55,4 +67,4 @@
   </div>
 {{/if}}
 
-<script src="/js/newComment.js"></script>
+
