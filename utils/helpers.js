@@ -5,9 +5,9 @@ module.exports = {
   },
   restoreContent: (str) => {
     // Restore spaces
-    const restoreSpaces = str.replace(/§/g, '&nbsp;');
+    const restoreSpaces = str.replace(/§/g, '\u00A0');
     // Restore line breaks
-    const restoreLines = restoreSpaces.replace(/€/g, '<br>');
+    const restoreLines = restoreSpaces.replace(/€/g, '\n');
     return restoreLines;
   },
 };

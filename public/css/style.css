@@ -108,7 +108,7 @@
     border: 5px solid black;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
 }
 
 .profilePosts {
@@ -128,7 +128,12 @@
     margin: 10px;
 }
 
+
 body {
-    background: linear-gradient(to bottom, #aaa1a1, #87CEEB);
-  }
-  
+   background: linear-gradient(to bottom, #aaa1a1, #87CEEB);
+}
+
+.profilePost pre {
+    text-align: left;
+}
+
