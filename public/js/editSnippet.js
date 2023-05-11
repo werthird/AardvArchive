@@ -13,31 +13,6 @@ function convertContent(str) {
 // CREATE NEW SNIPPET
 
 
-const newSnippetHandler = async (event) => {
-  event.preventDefault();
-
-  // Collect values from the create new snippet form
-  const title = document.querySelector('#snippet-title').value.trim();
-  const rawCode = document.querySelector('#snippet-content').value.trim();
-  //const category = document.querySelector('#snippet-category').value.trim();
-
-  if (title && rawCode) {
-
-    const code = convertContent(rawCode);
-
-    // Send a POST request to the API endpoint
-    const response = await fetch(`/api/snippets`, {
-      method: 'POST',
-      body: JSON.stringify({ title, code }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
-
 document.addEventListener('DOMContentLoaded', () => {
   const newPostButton = document.querySelector('#new-post-button');
   const createNewSection = document.querySelector('#createNew');
@@ -81,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   newPostButton.addEventListener('click', showForm);
   newSnippetForm.addEventListener('submit', newSnippetHandler);
 });
+
 
 
 
