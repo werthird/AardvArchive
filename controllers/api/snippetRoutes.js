@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
         {include:[User, Comment]
       }).then(snippetData => {
         const dbSnippet = snippetData.get({plain:true});
-        console.log(dbSnippet);
+        console.log(`${dbSnippet.code}`);
         dbSnippet.logged_in = req.session.user?true:false
         
         res.render('snippet', dbSnippet);

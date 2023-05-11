@@ -1,5 +1,11 @@
-// REQUIREMENTS
-//const { convertContent } = require('../../utils/convert.js')
+// =======================================================================
+// CONVERT TEXT FUNCTION
+
+function convertContent(str) {
+  const convertSpaces = str.replace(/[ \t]/g, '§');
+  const convertLinesBreaks = convertSpaces.replace(/\n/g, '€');
+  return convertLinesBreaks;
+};
 
 
 
@@ -11,10 +17,13 @@ const newSnippetHandler = async (event) => {
 
   // Collect values from the create new snippet form
   const title = document.querySelector('#snippet-title').value.trim();
-  const code = document.querySelector('#snippet-content').value.trim();
+  const rawCode = document.querySelector('#snippet-content').value.trim();
   //const category = document.querySelector('#snippet-category').value.trim();
 
-  if (title && code) {
+  if (title && rawCode) {
+
+    const code = convertContent(rawCode);
+
     // Send a POST request to the API endpoint
     const response = await fetch(`/api/snippets`, {
       method: 'POST',
