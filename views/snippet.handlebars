@@ -1,4 +1,4 @@
-<div class snippetAll>
+<div class="snippetAll">
 {{!-- DISPLAY POST --}}
 <div class="snippetDiv">
   <div>
@@ -36,7 +36,7 @@
 <div class="commentDiv">
   <h2>Comments:</h2>
   {{#each comments as |comment|}}
-    <div>
+    <div class="userComment">
       <pre class="code-snippet">{{{restoreContent comment.comment}}}</pre>
       <p>-- {{format_date comment.createdAt}}</p>
     </div>
@@ -48,16 +48,15 @@
 {{!-- ADD COMMENT --}}
 {{#if logged_in}}
   <div class="addCommentDiv">
-    <h3>Add a comment:</h3>
+    <h2>Add a comment:</h2>
 
     <form class="new-comment-form">
       <div>
-        <label for="comment-content">Comment</label>
-        <textarea id="comment-content" name="comment-content"></textarea>
+        <textarea id="comment-content" name="comment-content" placeholder="Your Comment Here"></textarea>
       </div>
       <input type="hidden" id="snippet-id" value="{{id}}">
       <div>
-        <button type="submit">Create</button>
+        <button class="commentBtn" type="submit">Create</button>
       </div>
     </form>
   </div>
