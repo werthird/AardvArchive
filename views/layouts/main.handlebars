@@ -58,7 +58,12 @@
         editor.session.setTabSize(4);
         editor.session.setUseWrapMode(true);
         editor.setHighlightActiveLine(true);
-        editor.setReadOnly(true);
+        // Check if the current editor element has the "editable-editor" class
+        if (editorElements[i].classList.contains("editable-editor")) {
+            editor.setReadOnly(false); // Make it editable
+        } else {
+            editor.setReadOnly(true); // Make it read-only
+        }
     }
 </script>
 

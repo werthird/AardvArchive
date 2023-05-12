@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Collect values from the create new snippet form
     const title = document.querySelector('#snippet-title').value.trim();
-    const rawCode = document.querySelector('#snippet-content').value.trim();
+    const editor = ace.edit("snippet-content");
+    const rawCode = editor.getValue();
+    alert(rawCode)
 
     if (title && rawCode) {
 
