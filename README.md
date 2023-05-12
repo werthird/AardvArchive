@@ -7,7 +7,7 @@
 
 AardvArchive is a code snippet storage site. Users can create, save, view, and comment on helpful code snippets. Made for programmers by programmers to share knowledge and useful code snippets to everyone. 
 
-<img style="text-align: center" src="./public/assets/project2 screenshot.png" alt="AardvArchive" style="width:100%;height:100%"/>
+<img style="text-align: center" src="./public/assets/project2 screenshot2 .png" alt="AardvArchive" style="width:100%;height:100%"/>
 
 <br />
 
