@@ -93,8 +93,18 @@
     text-decoration: none;
 }
 
-.loginDiv,
-.crudPosts {
+.crudPost {
+    display: block;
+    border: 5px solid darkolivegreen;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: rgb(244, 160, 49);;
+    color: darkolivegreen;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+}
+
+.loginDiv {
     display: block;
     border: 5px solid darkolivegreen;
     flex-wrap: wrap;
@@ -104,6 +114,7 @@
     color: darkolivegreen;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
+    border-radius: 25px;
 }
 
 .loginForms {
@@ -111,7 +122,17 @@
     flex-direction: column;
 }
 
-.loginForms h2,
+.loginForms h2{
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: lightskyblue;
+    background-color:  rgb(113, 74, 23);;
+    margin-bottom: 5px;
+    text-decoration: underline;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 .signupDiv h2 {
     font-family: 'Instrument Serif', serif;
     font-style: italic;
@@ -137,7 +158,8 @@
 .signupDiv {
     display: block;
     flex-wrap: wrap;
-    background-color: rgb(244, 160, 49);;
+    background-color: rgb(244, 160, 49);
+    border-radius: 20px;
 }
 
 .signupForms {
@@ -390,27 +412,21 @@ body {
     border: 5px solid darkolivegreen;
 }
 
-.sniplogBtn {
+.loginSnippet {
+    margin-top: 20px;
+    background-color: rgb(244, 160, 49);
     border: 5px solid darkolivegreen;
     border-radius: 25px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    background-color: rgb(244, 160, 49);
+    width: 40%;
+    padding-bottom: 5px;
+}
+
+.loginSnippet h2 {
     font-family: 'Instrument Serif', serif;
     font-style: italic;
-    margin: 30px;
-    padding-bottom: 10px;
-    width: 300px;
-}
-
-.sniplogBtn h2 {
-    background-color: rgb(113, 74, 23);
     color: lightskyblue;
+    background-color:  rgb(113, 74, 23);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    margin-bottom: 20px;
-}
-
-.postAuthor {
-    font-size: 18px;
+    margin-bottom: 5px;
 }
