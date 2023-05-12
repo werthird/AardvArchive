@@ -430,3 +430,11 @@ body {
     border-top-right-radius: 20px;
     margin-bottom: 5px;
 }
+
+.banner2 h2 {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: darkolivegreen;
+    text-decoration: underline;
+    font-size: xx-large;
+}
