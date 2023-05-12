@@ -92,7 +92,8 @@
     text-decoration: none;
 }
 
-.loginDiv {
+.loginDiv,
+.crudPosts {
     display: block;
     border: 5px solid darkolivegreen;
     flex-wrap: wrap;
@@ -298,6 +299,7 @@ body {
     bottom: 0;
     left: 0;
 }
+
 .snippetAll {
     display: flex;
     justify-content: space-around;
@@ -377,4 +379,25 @@ body {
     height: 200px;
     margin: 5px;
     border: 5px solid darkolivegreen;
+}
+
+.sniplogBtn {
+    border: 5px solid darkolivegreen;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: rgb(244, 160, 49);
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    margin: 30px;
+    padding-bottom: 10px;
+    width: 300px;
+}
+
+.sniplogBtn h2 {
+    background-color: rgb(113, 74, 23);
+    color: lightskyblue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 20px;
 }
