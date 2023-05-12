@@ -192,7 +192,8 @@
 .signupbtn,
 .submitbtn,
 .update-snippet-button,
-.delete-snippet-button {
+.delete-snippet-button,
+.commentBtn {
     background-color: rgb(113, 74, 23);
     border: 2px solid darkolivegreen;
     width: 100px;
@@ -250,9 +251,10 @@ body {
 }
 
 .code-editor {
-    margin: 20px;
-    width: 300px;
-    height: 300px;
+    margin: 10%;
+    width: 80%;
+    height: 80%;
+    min-height: 400px;
 }
 
 .editor { 
@@ -266,14 +268,19 @@ body {
 .snippetAll {
     display: flex;
     justify-content: space-around;
+    width: 90%;
+    flex-wrap: wrap;
 }
 
 .snippetDiv {
+    display: flex;
+    flex-direction: column;
     border: 5px solid darkolivegreen;
     border-radius: 25px;
     background-color: rgb(244, 160, 49);
     margin: 5% 0 0 5%;
     font-family: 'Instrument Serif', serif;
+    width: 40%;
 }
 
 .snippetDiv h2 {
@@ -289,14 +296,50 @@ body {
     flex-direction: row;
     justify-content: space-around;
     margin: 10px;
+    flex-wrap: wrap;
 }
 
 .commentDiv {
-    border: 5px solid black;
-    margin: 30px;
+    border: 5px solid darkolivegreen;
+    border-radius: 25px;
+    background-color: rgb(244, 160, 49);
     align-self: flex-end;
+    width: 40%;
+    height: 60%;
+}
+
+.commentDiv h2 {
+    background-color: rgb(113, 74, 23);
+    color: lightskyblue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; 
+}
+
+.userComment {
+    background-color: white;
+    margin: 6px 6px 3px 6px;
 }
 
 .addCommentDiv {
-    border: 5px solid black;
+    margin-top: 20px;
+    background-color: rgb(244, 160, 49);
+    border: 5px solid darkolivegreen;
+    border-radius: 25px;
+    width: 40%;
+    padding-bottom: 5px;
+}
+
+.addCommentDiv h2 {
+    background-color: rgb(113, 74, 23);
+    color: lightskyblue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 20px;
+}
+
+#comment-content {
+    width: 90%;
+    height: 200px;
+    margin: 5px;
+    border: 5px solid darkolivegreen;
 }
