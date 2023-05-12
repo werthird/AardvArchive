@@ -363,6 +363,7 @@ body {
 .userComment {
     background-color: white;
     margin: 6px 6px 3px 6px;
+    overflow: scroll;
 }
 
 .addCommentDiv {
