@@ -42,7 +42,7 @@
     text-align: center;
     display: flex;
     min-height: 80vh;
-    background-image: url("../images/savannah1.jpg");
+    background-image: url("/images/savannah2.jpg");
     background-size: cover;
 }
 
