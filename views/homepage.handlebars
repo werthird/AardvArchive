@@ -8,7 +8,7 @@
         <card class="post">
             <a href="/api/snippets/{{snippet.id}}"><h2 class="postTitle">{{snippet.title}}</h2></a>
             <p class="postAuthor">- Created by {{snippet.user.username}} {{format_date snippet.createdAt}}</p>
-            <pre class="code-snippet editor">{{snippet.code}}</pre>
+            <pre class="code-snippet editor">{{restoreContent snippet.code}}</pre>
         </card>
     {{/each}}
 </section>
