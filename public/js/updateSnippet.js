@@ -15,8 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Collect values from page
     const title = document.querySelector('#update-snippet-title').value.trim();
-    const rawContent = document.querySelector('#update-snippet-content').value;
+    // const rawContent = document.querySelector('#update-snippet-content').value;
     const snippetId = document.querySelector("#hidden-snippet-id").value;
+
+    const editor = ace.edit("update-snippet-content");
+    const rawContent = editor.getValue();
 
     if (title && rawContent && snippetId) {
 

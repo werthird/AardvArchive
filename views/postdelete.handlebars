@@ -1,9 +1,9 @@
-<div class="crudAll">
-<div class="banner2">
-    <h2>Update Snippets</h2>
-</div>
+<div class="profileDiv">
+    <div class="banner2">
+        <h2>Update Snippets</h2>
+    </div>
 
-<section class="crudPosts">
+{{!-- <section class="crudPosts">
     <div>
         <h3>Edit Post:</h3>
         <form class="update-snippet-form">
@@ -11,10 +11,9 @@
                 <label for="update-snippet-title">Title:</label>
                 <input class="form-input" type="text" id="update-snippet-title" name="update-snippet-title" value="{{title}}"/>
             </div>
-            <div>
-                <label for="update-snippet-content">Post:</label>
-                <div class="profilePost">
-                    <pre class="update-snippet editor" id="update-snippet-content" name="update-snippet-content">{{restoreContent code}}</pre>
+            <div class="newPosts">
+                <div class="newPost">
+                    <pre class="code-snippet editor editable-editor" id="update-snippet-content" name="update-snippet-content">{{restoreContent code}}</pre>
                 </div>
             </div>
                 <input type="hidden" id="hidden-snippet-id" value="{{id}}">
@@ -26,5 +25,26 @@
             </div>
         </form>
     </div>
-</section>
+</section> --}}
+    <div class="profileDiv">
+        <div class="allNew">
+            <section id="createNew">
+                <div class="card-body">
+                    <h2 class="card-title">Edit Post</h2>
+                    <form class="update-snippet-form">
+                        <div class="card-text">
+                            <input class="titleInput" type="text" id="update-snippet-title" value="{{title}}">
+                        </div>
+                        <div class="newPosts">
+                            <pre class="editor editable-editor" id="update-snippet-content">{{restoreContent code}}</pre>
+                        </div>
+                        <input type="hidden" id="hidden-snippet-id" value="{{id}}">
+                        <div id="snippet-button">
+                            <button type="submit" class="submitbtn">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
 </div>
