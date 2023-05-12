@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-// =======================================================================
-// CONVERT TEXT FUNCTION
-function convertContent(str) {
-  const convertSpaces = str.replace(/[ \t]/g, '§');
-  const convertLinesBreaks = convertSpaces.replace(/\n/g, '€');
-  return convertLinesBreaks;
-};
+  // =======================================================================
+  // CONVERT TEXT FUNCTION
+  function convertContent(str) {
+    const convertSpaces = str.replace(/[ \t]/g, '§');
+    const convertLinesBreaks = convertSpaces.replace(/\n/g, '€');
+    return convertLinesBreaks;
+  };
 
-// =======================================================================
-// CREATE NEW SNIPPET
+  // =======================================================================
+  // CREATE NEW SNIPPET
   const newPostButton = document.querySelector('#new-post-button');
   const createNewSection = document.querySelector('#createNew');
   const newSnippetForm = document.querySelector('.new-snippet-form');
@@ -25,9 +25,13 @@ function convertContent(str) {
 
     // Collect values from the create new snippet form
     const title = document.querySelector('#snippet-title').value.trim();
-    const code = document.querySelector('#snippet-content').value.trim();
+    const editor = ace.edit("snippet-content");
+    const rawCode = editor.getValue();
+    alert(rawCode)
 
-    if (title && code) {
+    if (title && rawCode) {
+
+      const code = convertContent(rawCode);
       // Send a POST request to the API endpoint
       const response = await fetch(`/api/snippets`, {
         method: 'POST',

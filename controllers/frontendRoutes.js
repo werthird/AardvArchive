@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const {User, Snippet, Comment, Category} = require('../models');
 
+
+//==========================================================================
+// HOMEPAGE
+
 //Get route for homepage
 router.get('/', async (req, res) => {
   try {
@@ -11,9 +15,7 @@ router.get('/', async (req, res) => {
         attributes: ['username']
       }],
     });
-
     const snippets = snippetData.map((snippet) => snippet.get({ plain: true }));
-
     res.render('homepage', {
       snippets,
       logged_in: req.session.user
@@ -23,6 +25,11 @@ router.get('/', async (req, res) => {
   };
 });
 
+
+
+//==========================================================================
+// LOGIN PAGE
+
 //Get route for login page
 router.get("/login", (req,res) =>{
   if(req.session.user){
@@ -31,6 +38,11 @@ router.get("/login", (req,res) =>{
     res.render("login");
   };
 });
+
+
+
+//==========================================================================
+// SIGNUP PAGE
 
 //Get route for signup page
 router.get("/signup", (req,res) =>{
@@ -55,26 +67,26 @@ router.get("/profile",(req,res)=>{
   });
 });
 
+
+
 //==========================================================================
-// EDIT POST PAGE
-router.get('/profile/update/:id', async (req, res) => {
-  try {
-    // Grab post based on id
-    const postData = await Snippet.findByPk(req.params.id, {
-      include: [ User, Comment ],
-    });
-
-    // Serialize data
-    const post = postData.get({ plain: true });
-
-    // Render post view
-    res.render('postdelete', {
-      post,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
+// EDIT SNIPPET PAGE
+router.get("/profile/update/:id", (req, res) => {
+  if(!req.session.user) {
+    return res.redirect('/login')
   }
+  Snippet.findByPk(req.params.id,
+      {include:[ User, Comment ]})
+    .then(snippetData => {
+      const dbSnippet = snippetData.get({plain:true});
+      dbSnippet.logged_in = req.session.user?true:false
+
+      res.render('postdelete', dbSnippet);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ msg: "an error occured", err });
+    });
 });
 
 

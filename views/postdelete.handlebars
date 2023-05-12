@@ -1,34 +1,26 @@
 <div class="banner2">
-    <h2>Create, Update or Delete Posts</h2>
+    <h2>Update Snippets</h2>
 </div>
 
 <section class="crudPosts">
-    <card class="newPost">
-        <div class="newTitle">
-
-        </div>
-        <div class="newAuthor">
-
-        </div>
-        <div class="newCat">
-
-        </div>
-
-        <!-- RENDER CONTENT -->
-
-        <div class="newDate">
-
-        </div>
-    </card>
-</section>
-
-<section class="editPost">
-    <p>New Title:</p>
-    <input type="text" class="inputTitle">
-
-    <p>New Content:</p>
-    <input type="text" class="inputContent">
-
-    <button type="button">Update</button>
-    <button type="button">Delete</button>
+    <div>
+        <h3>Edit Post:</h3>
+        <form class="update-snippet-form">
+            <div>
+                <label for="update-snippet-title">Title:</label>
+                <input class="form-input" type="text" id="update-snippet-title" name="update-snippet-title" value="{{title}}"/>
+            </div>
+            <div>
+                <label for="update-snippet-content">Post:</label>
+                <textarea class="update-snippet" id="update-snippet-content" name="update-snippet-content">{{restoreContent code}}</textarea>
+            </div>
+                <input type="hidden" id="hidden-snippet-id" value="{{id}}">
+            <div id="snippet-button">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+                <div class="delete-snippet-button">
+                <button class="delete-snippet-button" type="submit" data-snippet-id="{{id}}">Delete</button>
+            </div>
+        </form>
+    </div>
 </section>
