@@ -20,7 +20,7 @@
     font-weight: bolder;
     color: lightskyblue;
     background-color: rgb(113, 74, 23);
-    border: 5px solid darkolivegreen;;
+    border: 5px solid darkolivegreen;
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
@@ -92,6 +92,17 @@
     text-decoration: none;
 }
 
+.crudPost {
+    display: block;
+    border: 5px solid darkolivegreen;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: rgb(244, 160, 49);;
+    color: darkolivegreen;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+}
+
 .loginDiv {
     display: block;
     border: 5px solid darkolivegreen;
@@ -102,6 +113,7 @@
     color: darkolivegreen;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
+    border-radius: 25px;
 }
 
 .loginForms {
@@ -109,7 +121,17 @@
     flex-direction: column;
 }
 
-.loginForms h2,
+.loginForms h2{
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: lightskyblue;
+    background-color:  rgb(113, 74, 23);;
+    margin-bottom: 5px;
+    text-decoration: underline;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 .signupDiv h2 {
     font-family: 'Instrument Serif', serif;
     font-style: italic;
@@ -135,7 +157,8 @@
 .signupDiv {
     display: block;
     flex-wrap: wrap;
-    background-color: rgb(244, 160, 49);;
+    background-color: rgb(244, 160, 49);
+    border-radius: 20px;
 }
 
 .signupForms {
@@ -377,4 +400,23 @@ body {
     height: 200px;
     margin: 5px;
     border: 5px solid darkolivegreen;
+}
+
+.loginSnippet {
+    margin-top: 20px;
+    background-color: rgb(244, 160, 49);
+    border: 5px solid darkolivegreen;
+    border-radius: 25px;
+    width: 40%;
+    padding-bottom: 5px;
+}
+
+.loginSnippet h2 {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: lightskyblue;
+    background-color:  rgb(113, 74, 23);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 5px;
 }

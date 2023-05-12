@@ -25,8 +25,8 @@
       <button class="delete-snippet-button" type="submit" data-snippet-id="{{id}}">Delete</button>
     </div>
   </div>
-</div>
 {{/if}}
+</div>
 
 
 
@@ -61,10 +61,11 @@
     </form>
   </div>
 {{else}}
-  <div>
-    <p>Login in to add your own comments.</p>
-    <a href="/login">Login</a>
-    <a href="/signup">Signup</a>
+  <div class="loginSnippet">
+    <h2>Login in to add your own comments.</h2>
+    <form action="/login">
+         <button class="loginbtn" type="submit">Login</button>
+      </form>
   </div>
 {{/if}}
 </div>
