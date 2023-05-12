@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const title = document.querySelector('#snippet-title').value.trim();
     const editor = ace.edit("snippet-content");
     const rawCode = editor.getValue();
-    alert(rawCode)
 
     if (title && rawCode) {
 

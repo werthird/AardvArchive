@@ -1,6 +1,6 @@
 const User = require('./User');
 const Snippet = require('./Snippet');
-const Category = require('./Category');
+// const Category = require('./Category');
 const Comment = require('./Comment');
 
 
@@ -46,4 +46,4 @@ Comment.belongsTo(Snippet, {
 //   foreignKey: 'category_id',
 // });
 
-module.exports = { User, Snippet, Category, Comment };
+module.exports = { User, Snippet, Comment };
