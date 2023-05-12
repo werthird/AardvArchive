@@ -1,16 +1,35 @@
 <div class="profileDiv">
     <div class="userBanner">
-        <h2>User Created Posts</h2>
-        <h1>Here is the dashboard page</h1>
-        <h2>Welcome,
+        <h1>Welcome,
             {{#if first_name}}
                 {{first_name}}
             {{else}}
                 {{username}}!
             {{/if}}
-        </h2>
-        <h3>Your Posts:</h3>
+        </h1>
     </div>
+
+    <form id="newpost">
+      <button class="newPostbtn" id="new-post-button">+ New Post</button>
+    </form>
+
+    <div class="allNew">
+      <section id="createNew" style="display: none;">
+        <div class="card-body">
+          <h2 class="card-title">Create New Post</h2>
+          <form class="new-snippet-form">
+            <div class="card-text">
+              <input class="titleInput" type="text" id="snippet-title" placeholder="Enter a Title">
+            </div>
+            <div class="newPosts">
+                <pre class="editor editable-editor" id="snippet-content"></pre>
+            </div>
+            <button class="submitbtn" type="submit">Create</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
 
     <section class="profilePosts">
         {{#each snippets as |snippet|}}
@@ -22,28 +41,9 @@
         {{/each}}
     </section>
 
-  <div class="allNew">
-    <section id="createNew" style="display: none;">
-      <div class="card-body">
-        <h2 class="card-title">Create New Post</h2>
-        <form class="new-snippet-form">
-          <div class="card-text">
-            <input class="titleInput" type="text" id="snippet-title" placeholder="Enter a Title">
-          </div>
-          <div class="newPosts">
-            <div class="newPost">
-              <pre class="code-snippet editor editable-editor" id="snippet-content"></pre>
-            </div>
-          </div>
-          <button class="submitbtn" type="submit">Create</button>
-        </form>
-      </div>
-    </section>
-  </div>
+  
 
-  <form id="newpost">
-    <button class="newPostbtn" id="new-post-button">+ New Post</button>
-  </form>
+  
 
   <script src="/js/editSnippet.js"></script>
 </div>

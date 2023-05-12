@@ -10,7 +10,7 @@
     font-family: 'Lilita One', cursive;
     font-size: 75px;
     background-color: rgb(244, 160, 49);
-    border-bottom: 5px solid darkolivegreen;
+    border-bottom: 1px solid darkolivegreen;
 }
 
 .mainHeader a {
@@ -19,8 +19,9 @@
     font-style: italic;
     font-weight: bolder;
     color: lightskyblue;
+    padding: 5px 15px;
     background-color: rgb(113, 74, 23);
-    border: 5px solid darkolivegreen;;
+    border: 5px solid darkolivegreen;
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
@@ -67,12 +68,12 @@
     /* border: 5px solid rgb(114, 107, 107); */
     width: 95%;
     margin: 20px;
+    margin-bottom: 50px;
     text-align: center;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
     color: darkolivegreen;
     font-size: xx-large;
-    text-decoration: underline;
 }
 
 .post {
@@ -210,6 +211,7 @@
 .allNew {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 #createNew {
@@ -231,11 +233,16 @@
     margin-bottom: 3%;
     height: 40px;
     border-radius: 5px;
+    width: 400px;
 }
 
 .newPosts {
     display: flex;
     justify-content: space-around;
+}
+.newPosts pre {
+    width: 500px !important;
+    height: 500px;
 }
 
 .card-body {
@@ -292,6 +299,7 @@ body {
 }
 
 .editor { 
+    font-size: 16px;
     width: 100%;
     height: 100%;
     top: 0;
@@ -400,4 +408,8 @@ body {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin-bottom: 20px;
+}
+
+.postAuthor {
+    font-size: 18px;
 }
