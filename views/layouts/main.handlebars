@@ -17,6 +17,7 @@
     <main class="mainSection">
             <nav class="sideNav">
         <a href="/"><canvas id="canvas1" width="100" height="100"></canvas></a>
+        
 
         <!-- ADD SEARCH FUNCTION -->
         
@@ -43,6 +44,21 @@
   {{/if}}
 
 <script src="https://unpkg.com/@rive-app/canvas@1.0.102"></script>
+<script>
+   new rive.Rive({
+    src: "/assets/rive.riv",
+    // Or the path to a public Rive asset
+    // src: '/public/example.riv',
+    canvas: document.getElementById("canvas"),
+    autoplay: true,
+});
+rive.on("load", () => {
+ const stateMachine = rive.getStateMachine("StateMachine1");
+  const instance = new rive.StateMachineInstance(stateMachine);
+  rive.addInstance(instance);
+  instance.play("myState");
+});
+</script>
 <script src="/js/rive.js"></script>
 
 <!-- Code Editor Scripts -->
