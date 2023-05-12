@@ -319,6 +319,8 @@ body {
 .snippetDiv h2 {
     background-color: rgb(113, 74, 23);
     color: lightskyblue;
+    word-wrap: break-word;
+    word-break: break-all;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     font-style: italic;
