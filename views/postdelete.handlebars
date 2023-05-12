@@ -12,7 +12,9 @@
             </div>
             <div>
                 <label for="update-snippet-content">Post:</label>
-                <textarea class="update-snippet" id="update-snippet-content" name="update-snippet-content">{{restoreContent code}}</textarea>
+                <div class="profilePost">
+                    <pre class="update-snippet editor" id="update-snippet-content" name="update-snippet-content">{{restoreContent code}}</pre>
+                </div>
             </div>
                 <input type="hidden" id="hidden-snippet-id" value="{{id}}">
             <div id="snippet-button">
