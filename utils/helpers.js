@@ -5,21 +5,10 @@ module.exports = {
   },
   restoreContent: (str) => {
     // Restore spaces
-    const restoreSpaces = str.replace(/§/g, '\u00A0');
+    const restoreSpaces = str.replace(/§/g, ' ');
     // Restore line breaks
     const restoreLines = restoreSpaces.replace(/€/g, '\n');
     return restoreLines;
   },
 };
-
-
-// FUNCTIONS TO ADD TO THE UPDATE AND CREATE POSTS TO BE ABLE TO CONVERT SPACE AND LINES TO SYMBOLS
-// MAKE SURE THAT THE RENDERED CODE SNIPPET ON THE PAGE IS IN {{{ }}} BRACKETS TO RENDER THE HTML, NOT JUST THE STRING
-
-// function convertNewParagraph(str) {
-//   return str.replace(/\n/g, '€');
-// };
-
-// function convertSpaces(str) {
-//   return str.replace(/[ \t]/g, '§');
-// };
+// \u00A0
